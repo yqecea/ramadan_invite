@@ -15,7 +15,8 @@ const translations = {
         detailDate: '14 наурыз 2026, сенбі',
         detailAddress: 'Керей, Жәнібек хандар к-сі, 22',
         detailFloor: '10 подъезд, 12 қабат, 347 пәтер',
-        footerText: 'Сіздермен кездесуді асыға күтеміз!'
+        footerText: 'Сіздермен кездесуді асыға күтеміз!',
+        addCalendar: 'Күнтізбеге қосу'
     },
     ru: {
         familyName: 'Семья Бекболат',
@@ -29,7 +30,8 @@ const translations = {
         detailDate: '14 марта 2026, суббота',
         detailAddress: 'Керей, Жанибек хандар ул., 22',
         detailFloor: '10 подъезд, 12 этаж, 347 кв.',
-        footerText: 'С нетерпением ждём встречи с вами!'
+        footerText: 'С нетерпением ждём встречи с вами!',
+        addCalendar: 'Добавить в календарь'
     }
 };
 
@@ -131,4 +133,33 @@ document.addEventListener('DOMContentLoaded', () => {
     );
 
     document.querySelectorAll('.anim').forEach(el => observer.observe(el));
+
+    // -- Add to Calendar (.ics) --
+    document.getElementById('addToCalendar').addEventListener('click', () => {
+        const ics = [
+            'BEGIN:VCALENDAR',
+            'VERSION:2.0',
+            'PRODID:-//Bekbolat Family//Invite//KK',
+            'CALSCALE:GREGORIAN',
+            'METHOD:PUBLISH',
+            'BEGIN:VEVENT',
+            'DTSTART:20260314T130000Z',
+            'DTEND:20260314T170000Z',
+            'SUMMARY:Қоныстой + Ауызашар | Бекболат әулеті',
+            'DESCRIPTION:Қоныстойға және Ауызашар дастарханына қонақ болуға шақырамыз!\n\nНовоселье и Ауызашар — семья Бекболат',
+            'LOCATION:Olymp Palace 2\, Керей\, Жәнібек хандар к-сі\, 22\, подъезд 10\, этаж 12\, кв 347\, Астана',
+            'GEO:51.128;71.430',
+            'STATUS:CONFIRMED',
+            'END:VEVENT',
+            'END:VCALENDAR'
+        ].join('\r\n');
+
+        const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'bekbolat-invite.ics';
+        a.click();
+        URL.revokeObjectURL(url);
+    });
 });

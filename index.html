@@ -1,23 +1,36 @@
 <!DOCTYPE html>
 <html lang="kk">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Қоныстой + Ауызашар | Бекболат әулеті</title>
+    <meta name="description"
+        content="Бекболат әулеті Сіздерді қоныстойға және ауызашарға қонақ болуға шақырады. 14 Наурыз 2026, Астана.">
 
     <!-- Open Graph -->
     <meta property="og:title" content="Қоныстой + Ауызашар | Бекболат әулеті">
-    <meta property="og:description" content="Сіздерді қоныстойға және ауызашарға қонақ болуға шақырамыз! 14 Наурыз 2026.">
+    <meta property="og:description"
+        content="Сіздерді қоныстойға және ауызашарға қонақ болуға шақырамыз! 14 Наурыз 2026.">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ramadan-invite.web.app">
+    <meta property="og:image" content="https://ramadan-invite.web.app/astana_watercolor.webp">
     <meta name="theme-color" content="#5C6B4F">
+
+    <!-- Preload critical images -->
+    <link rel="preload" as="image" type="image/webp" href="kazakh_ornament.webp">
+    <link rel="preload" as="image" type="image/webp" href="astana_watercolor.webp">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,400;0,600;0,700;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,400;0,600;0,700;1,400&family=Great+Vibes&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="page">
         <!-- Language Toggle -->
@@ -32,7 +45,11 @@
         <main>
             <!-- Ornament Top -->
             <div class="ornament anim" aria-hidden="true">
-                <img src="kazakh_ornament.png" alt="" class="ornament-img" loading="eager">
+                <picture>
+                    <source srcset="kazakh_ornament.webp" type="image/webp">
+                    <img src="kazakh_ornament.png" alt="" class="ornament-img" loading="eager" width="560" height="180"
+                        fetchpriority="high">
+                </picture>
             </div>
 
             <!-- Hero -->
@@ -43,7 +60,11 @@
 
             <!-- Astana Illustration -->
             <div class="illustration anim" aria-hidden="true">
-                <img src="astana_watercolor.png" alt="Астана акварелі" class="illustration-img" loading="eager">
+                <picture>
+                    <source srcset="astana_watercolor.webp" type="image/webp">
+                    <img src="astana_watercolor.png" alt="Астана акварелі" class="illustration-img" loading="eager"
+                        width="800" height="600" fetchpriority="high">
+                </picture>
             </div>
 
             <!-- Invitation -->
@@ -84,14 +105,24 @@
             <!-- Details -->
             <section class="details anim">
                 <div class="detail-row">
-                    <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="4" width="18" height="18" rx="2" />
+                        <line x1="16" y1="2" x2="16" y2="6" />
+                        <line x1="8" y1="2" x2="8" y2="6" />
+                        <line x1="3" y1="10" x2="21" y2="10" />
+                    </svg>
                     <div>
                         <span class="detail-main" data-i18n="detailDate">14 наурыз 2026, сенбі</span>
                         <span class="detail-sub">18:00</span>
                     </div>
                 </div>
                 <div class="detail-row">
-                    <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                        <circle cx="12" cy="10" r="3" />
+                    </svg>
                     <div>
                         <span class="detail-main">Olymp Palace 2</span>
                         <span class="detail-sub" data-i18n="detailAddress">Керей, Жәнібек хандар к-сі, 22</span>
@@ -102,19 +133,46 @@
 
             <!-- Map Buttons -->
             <section class="maps anim">
-                <a href="https://maps.app.goo.gl/N97sVe6t6rmiMs5Y7" class="btn-map" target="_blank" rel="noopener noreferrer">
-                    <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+                <a href="https://maps.app.goo.gl/N97sVe6t6rmiMs5Y7" class="btn-map" target="_blank"
+                    rel="noopener noreferrer">
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z" />
+                    </svg>
                     Google Maps
                 </a>
-                <a href="https://go.2gis.com/QNugJ" class="btn-map btn-map--alt" target="_blank" rel="noopener noreferrer">
-                    <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+                <a href="https://go.2gis.com/QNugJ" class="btn-map btn-map--alt" target="_blank"
+                    rel="noopener noreferrer">
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z" />
+                    </svg>
                     2GIS
                 </a>
             </section>
 
+            <!-- Add to Calendar -->
+            <section class="calendar-section anim">
+                <button class="btn-calendar" id="addToCalendar">
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="4" width="18" height="18" rx="2" />
+                        <line x1="16" y1="2" x2="16" y2="6" />
+                        <line x1="8" y1="2" x2="8" y2="6" />
+                        <line x1="3" y1="10" x2="21" y2="10" />
+                        <line x1="12" y1="14" x2="12" y2="18" />
+                        <line x1="10" y1="16" x2="14" y2="16" />
+                    </svg>
+                    <span data-i18n="addCalendar">Күнтізбеге қосу</span>
+                </button>
+            </section>
+
             <!-- Ornament Bottom -->
             <div class="ornament ornament--bottom anim" aria-hidden="true">
-                <img src="kazakh_ornament.png" alt="" class="ornament-img" loading="lazy">
+                <picture>
+                    <source srcset="kazakh_ornament.webp" type="image/webp">
+                    <img src="kazakh_ornament.png" alt="" class="ornament-img" loading="lazy" width="560" height="180">
+                </picture>
             </div>
 
             <!-- Footer -->
@@ -124,6 +182,7 @@
         </main>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
+
 </html>
