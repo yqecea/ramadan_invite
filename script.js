@@ -16,7 +16,8 @@ const translations = {
         detailAddress: 'Керей, Жәнібек хандар к-сі, 22',
         detailFloor: '10 подъезд, 12 қабат, 347 пәтер',
         footerText: 'Сіздермен кездесуді асыға күтеміз!',
-        addCalendar: 'Күнтізбеге қосу'
+        addCalendar: 'Күнтізбеге қосу',
+        contactLabel: 'байланыс'
     },
     ru: {
         familyName: 'Семья Бекболат',
@@ -31,7 +32,8 @@ const translations = {
         detailAddress: 'Керей, Жанибек хандар ул., 22',
         detailFloor: '10 подъезд, 12 этаж, 347 кв.',
         footerText: 'С нетерпением ждём встречи с вами!',
-        addCalendar: 'Добавить в календарь'
+        addCalendar: 'Добавить в календарь',
+        contactLabel: 'контакты'
     }
 };
 
