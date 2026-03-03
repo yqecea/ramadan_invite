@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Қоныстой + Ауызашар | Бекболат әулеті</title>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Қоныстой + Ауызашар | Бекболат әулеті">
+    <meta property="og:description" content="Сіздерді қоныстойға және ауызашарға қонақ болуға шақырамыз! 14 Наурыз 2026.">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#5C6B4F">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,400;0,600;0,700;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page">
+        <!-- Language Toggle -->
+        <header class="header">
+            <div class="lang-switch" role="radiogroup" aria-label="Тіл таңдау">
+                <button class="lang-btn active" data-lang="kk" aria-pressed="true">ҚАЗ</button>
+                <span class="lang-dot"></span>
+                <button class="lang-btn" data-lang="ru" aria-pressed="false">РУС</button>
+            </div>
+        </header>
+
+        <main>
+            <!-- Ornament Top -->
+            <div class="ornament anim" aria-hidden="true">
+                <img src="kazakh_ornament.png" alt="" class="ornament-img" loading="eager">
+            </div>
+
+            <!-- Hero -->
+            <section class="hero anim">
+                <h1 class="family-name" data-i18n="familyName">Бекболат әулеті</h1>
+                <p class="hero-date" data-i18n="heroDate">14 Наурыз 2026, Сенбі</p>
+            </section>
+
+            <!-- Astana Illustration -->
+            <div class="illustration anim" aria-hidden="true">
+                <img src="astana_watercolor.png" alt="Астана акварелі" class="illustration-img" loading="eager">
+            </div>
+
+            <!-- Invitation -->
+            <section class="invitation anim">
+                <div class="invite-line"></div>
+                <p class="invite-text" data-i18n="inviteText">
+                    Сіздерді жаңа шаңырағымыздың қуанышы – Қоныстойға және Ауызашар дастарханына қонақ болуға шақырамыз
+                </p>
+                <div class="invite-line"></div>
+            </section>
+
+            <!-- Countdown -->
+            <section class="countdown anim">
+                <h2 class="section-label" data-i18n="countdownLabel">тойға дейін</h2>
+                <div class="timer" id="countdown">
+                    <div class="timer-unit">
+                        <span class="timer-value" id="cd-days">00</span>
+                        <span class="timer-name" data-i18n="cdDays">күн</span>
+                    </div>
+                    <span class="timer-sep">:</span>
+                    <div class="timer-unit">
+                        <span class="timer-value" id="cd-hours">00</span>
+                        <span class="timer-name" data-i18n="cdHours">сағат</span>
+                    </div>
+                    <span class="timer-sep">:</span>
+                    <div class="timer-unit">
+                        <span class="timer-value" id="cd-minutes">00</span>
+                        <span class="timer-name" data-i18n="cdMins">минут</span>
+                    </div>
+                    <span class="timer-sep">:</span>
+                    <div class="timer-unit">
+                        <span class="timer-value" id="cd-seconds">00</span>
+                        <span class="timer-name" data-i18n="cdSecs">секунд</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Details -->
+            <section class="details anim">
+                <div class="detail-row">
+                    <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    <div>
+                        <span class="detail-main" data-i18n="detailDate">14 наурыз 2026, сенбі</span>
+                        <span class="detail-sub">18:00</span>
+                    </div>
+                </div>
+                <div class="detail-row">
+                    <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <div>
+                        <span class="detail-main">Olymp Palace 2</span>
+                        <span class="detail-sub" data-i18n="detailAddress">Керей, Жәнібек хандар к-сі, 22</span>
+                        <span class="detail-sub" data-i18n="detailFloor">10 подъезд, 12 қабат, 347 пәтер</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Map Buttons -->
+            <section class="maps anim">
+                <a href="https://maps.app.goo.gl/N97sVe6t6rmiMs5Y7" class="btn-map" target="_blank" rel="noopener noreferrer">
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+                    Google Maps
+                </a>
+                <a href="https://go.2gis.com/QNugJ" class="btn-map btn-map--alt" target="_blank" rel="noopener noreferrer">
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+                    2GIS
+                </a>
+            </section>
+
+            <!-- Ornament Bottom -->
+            <div class="ornament ornament--bottom anim" aria-hidden="true">
+                <img src="kazakh_ornament.png" alt="" class="ornament-img" loading="lazy">
+            </div>
+
+            <!-- Footer -->
+            <footer class="footer anim">
+                <p class="footer-text" data-i18n="footerText">Сіздермен кездесуді асыға күтеміз!</p>
+            </footer>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
