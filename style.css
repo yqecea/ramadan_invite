@@ -27,6 +27,11 @@
     padding: 0;
 }
 
+svg:not(:root) {
+    overflow: hidden;
+    max-width: 100%;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -39,6 +44,8 @@ body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     min-height: 100dvh;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
 }
 
 /* Page container — mobile-first narrow */
@@ -186,8 +193,10 @@ body {
 }
 
 .scroll-hint svg {
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
+    max-width: 24px;
+    max-height: 24px;
     color: var(--gold);
     opacity: 0.5;
 }
@@ -482,12 +491,25 @@ body {
     justify-content: center;
     width: 42px;
     height: 42px;
+    min-width: 42px;
+    min-height: 42px;
+    max-width: 42px;
+    max-height: 42px;
     border-radius: 50%;
     border: none;
     cursor: pointer;
     text-decoration: none;
+    overflow: hidden;
     transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
     -webkit-tap-highlight-color: transparent;
+}
+
+.contact-btn svg {
+    width: 20px !important;
+    height: 20px !important;
+    max-width: 20px !important;
+    max-height: 20px !important;
+    flex-shrink: 0;
 }
 
 .contact-btn--call {
