@@ -1,0 +1,12 @@
+{
+  "hosting": {
+    "target": "ramadan-invite",
+    "public": ".",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**",
+      "ref.png"
+    ]
+  }
+}
