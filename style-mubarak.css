@@ -6,15 +6,17 @@
 
 /* Tokens */
 :root {
-    --bg: #f0fdf9;
-    --bg-card: #e8faf2;
-    --accent: #0b0c0c;
-    --accent-light: rgba(11, 12, 12, 0.06);
-    --text: #0b0c0c;
-    --text-muted: #4a4a4a;
+    --bg: #000000;
+    --bg-card: #0a0a0a;
+    --accent: #ffffff;
+    --accent-light: rgba(255, 255, 255, 0.15);
+    --text: #ededed;
+    --text-muted: #888888;
+    --border: #333333;
 
-    --ff-main: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    --ff-tech: 'JetBrains Mono', 'Courier New', monospace;
+    --ff-main: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --ff-tech: 'Geist Mono', 'Courier New', monospace;
+    --ff-pixel: 'Pixelify Sans', monospace;
 }
 
 /* Reset */
@@ -91,7 +93,7 @@ body {
     object-fit: contain;
     object-position: center;
     display: block;
-    mix-blend-mode: multiply;
+    filter: invert(1) opacity(0.5); mix-blend-mode: screen;
 }
 
 .ornament--bottom .ornament-img {
@@ -105,7 +107,7 @@ body {
 }
 
 .title-main {
-    font-family: var(--ff-main);
+    font-family: var(--ff-pixel);
     font-size: clamp(48px, 14vw, 72px);
     font-weight:  900;
     color: var(--accent);
@@ -134,8 +136,8 @@ body {
     pointer-events: none;
     z-index: -1;
     background-size: 40px 40px;
-    background-image: linear-gradient(to right, rgba(11, 12, 12, 0.04) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(11, 12, 12, 0.04) 1px, transparent 1px);
+    background-image: linear-gradient(to right, rgba( 255, 255, 255 , 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba( 255, 255, 255 , 0.04) 1px, transparent 1px);
     mask-image: radial-gradient(circle at center, black 40%, transparent 90%);
     -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 90%);
 }
@@ -185,7 +187,7 @@ body {
     width: 100%;
     height: auto;
     display: block;
-    mix-blend-mode: multiply;
+    filter: invert(1) hue-rotate(180deg) contrast(1.2); mix-blend-mode: screen;
 }
 
 /* HUD Corners */
@@ -412,7 +414,7 @@ body {
 }
 
 .timer-value {
-    font-family: var(--ff-tech);
+    font-family: var(--ff-pixel);
     font-size: clamp(24px, 8vw, 36px);
     font-weight: 700;
     color: var(--accent);
