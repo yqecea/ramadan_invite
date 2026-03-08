@@ -95,8 +95,7 @@
         "script.js",
         "kazakh_ornament.png",
         "kazakh_ornament.webp",
-        "astana_watercolor.webp",
-        "text/**"
+        "astana_watercolor.webp"
       ],
       "headers": [
         {

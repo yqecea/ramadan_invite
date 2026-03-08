@@ -19,3 +19,10 @@ jobs:
           channelId: live
           projectId: gen-lang-client-0698883101
           target: ramadan-invite
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_GEN_LANG_CLIENT_0698883101 }}'
+          channelId: live
+          projectId: gen-lang-client-0698883101
+          target: ramadan-mubarak
