@@ -15,7 +15,7 @@
         "CODEBASE.md",
         "ARCHITECTURE.md",
         "ramadan-mubarak.html",
-        "style-mubarak.css",
+        "mubarak-theme.css",
         "mubarak.js",
         "hero-ahi.webp",
         "islamic_ornament.webp",
@@ -114,6 +114,15 @@
             {
               "key": "Cache-Control",
               "value": "public, max-age=604800"
+            }
+          ]
+        },
+        {
+          "source": "**/*.html",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, must-revalidate"
             }
           ]
         },
