@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Ауызашар | Братский ужин 15.03.2026</title>
+    <title>Ауызашар | 15.03.2026</title>
     <meta name="description"
-        content="Приглашаем братьев разделить благодать месяца Рамадан на вечернем ужине Ауызашар. 15 марта 2026, Астана.">
+        content="Приглашаем вас разделить благодать месяца Рамадан на вечернем ужине Ауызашар. 15 марта 2026, Астана.">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Ауызашар | Братский ужин 15.03.2026">
-    <meta property="og:description" content="Приглашаем братьев на совместный Ауызашар. 15 марта 2026, Астана.">
+    <meta property="og:title" content="Ауызашар | 15.03.2026">
+    <meta property="og:description" content="Приглашаем вас на совместный Ауызашар. 15 марта 2026, Астана.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ramadan-mubarak.web.app/ramadan-mubarak.html">
     <meta property="og:image" content="https://ramadan-mubarak.web.app/hero-ahi.webp">
@@ -19,9 +19,11 @@
     <!-- Fonts: Inter + JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
 
-    <link rel="stylesheet" href="style-mubarak.css?v=10">
+    <link rel="stylesheet" href="style-mubarak.css?v=11">
 </head>
 
 <body>
@@ -39,12 +41,7 @@
                 </picture>
             </div>
             <!-- Tech Label Bar -->
-            <div class="top-bar anim" aria-hidden="true">
-                <span class="bar-label"><span class="pulse-dot"></span> EXPERIMENTAL SYSTEMS</span>
-                <span class="bar-label">ASTANA // KAZ</span>
-                <span class="bar-label">DATA_SYNC: 99%</span>
-                <span class="bar-label">2026 // v2</span>
-            </div>
+            <!-- Tech Label Bar Removed -->
 
             <!-- Hero -->
             <section class="hero anim">
@@ -55,20 +52,7 @@
             <!-- Hero Illustration -->
             <div class="illustration anim" aria-hidden="true">
                 <!-- HUD Corner Overlays -->
-                <div class="hud-corners">
-                    <svg class="hud-corner top-left" viewBox="0 0 20 20" fill="none" stroke="currentColor">
-                        <path d="M 0 20 L 0 0 L 20 0" />
-                    </svg>
-                    <svg class="hud-corner top-right" viewBox="0 0 20 20" fill="none" stroke="currentColor">
-                        <path d="M 0 0 L 20 0 L 20 20" />
-                    </svg>
-                    <svg class="hud-corner bottom-left" viewBox="0 0 20 20" fill="none" stroke="currentColor">
-                        <path d="M 0 0 L 0 20 L 20 20" />
-                    </svg>
-                    <svg class="hud-corner bottom-right" viewBox="0 0 20 20" fill="none" stroke="currentColor">
-                        <path d="M 20 0 L 20 20 L 0 20" />
-                    </svg>
-                </div>
+
                 <!-- Crosshair -->
                 <div class="hud-crosshair"></div>
                 <picture>
@@ -90,7 +74,7 @@
             <section class="invitation anim">
                 <div class="invite-line"></div>
                 <p class="invite-text">
-                    Ассаляму алейкум, братья! Приглашаем вас разделить благодать священного месяца Рамадан
+                    Ассаляму алейкум! Приглашаем вас разделить благодать священного месяца Рамадан
                     на совместном вечернем ужине Ауызашар.
                 </p>
                 <blockquote class="hadith">
@@ -102,7 +86,7 @@
 
             <!-- Countdown -->
             <section class="countdown anim">
-                <h2 class="section-label">[ T-MINUS // ДО АУЫЗАШАРА ]</h2>
+                <h2 class="section-label">ДО АУЫЗАШАРА</h2>
                 <div class="timer" id="countdown">
                     <div class="timer-unit">
                         <span class="timer-value" id="cd-days">00</span>
@@ -159,9 +143,14 @@
                         <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
                         <path d="M7 11V7a5 5 0 0 1 10 0v4" />
                     </svg>
-                    <div>
-                        <span class="detail-main">Код домофона</span>
-                        <span class="detail-sub">1877# или #9757#</span>
+                    <div style="display: flex; flex-direction: column; gap: 4px;">
+                        <span class="detail-main" style="font-size: 0.85rem;">Код от внешней калитки</span>
+                        <span class="detail-sub"
+                            style="font-family: var(--ff-tech); font-size: 1.1rem; letter-spacing: 1px; color: var(--text);">#9757#</span>
+                        <div style="margin-top: 4px;"></div>
+                        <span class="detail-main" style="font-size: 0.85rem;">Код от подъезда</span>
+                        <span class="detail-sub"
+                            style="font-family: var(--ff-tech); font-size: 1.1rem; letter-spacing: 1px; color: var(--text);">#3333</span>
                     </div>
                 </div>
             </section>
@@ -211,15 +200,11 @@
                 </picture>
             </div>
             <!-- Tech Label Bar -->
-            <div class="bottom-bar anim" aria-hidden="true">
-                <span class="bar-label">////////////</span>
-                <span class="bar-label">RAMADAN 1447</span>
-                <span class="bar-label">////////////</span>
-            </div>
+            <!-- Tech Label Bar Removed -->
 
             <!-- Contact -->
             <section class="contacts anim">
-                <h2 class="section-label">[ КОНТАКТ ]</h2>
+                <h2 class="section-label">КОНТАКТ</h2>
                 <div class="contact-card">
                     <span class="contact-name">Ануар</span>
                     <div class="contact-actions">
