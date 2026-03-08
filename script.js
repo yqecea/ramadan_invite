@@ -15,6 +15,8 @@ const translations = {
         detailDate: '14 наурыз 2026, сенбі',
         detailAddress: 'Керей, Жәнібек хандар к-сі, 22',
         detailFloor: '10 подъезд, 12 қабат, 347 пәтер',
+        gateCodeMain: 'Код домофона',
+        gateCodeSub: '1877# немесе #9757#',
         footerText: 'Сіздермен кездесуді асыға күтеміз!',
         addCalendar: 'Күнтізбеге қосу',
         contactLabel: 'байланыс'
@@ -31,6 +33,8 @@ const translations = {
         detailDate: '14 марта 2026, суббота',
         detailAddress: 'Керей, Жанибек хандар ул., 22',
         detailFloor: '10 подъезд, 12 этаж, 347 кв.',
+        gateCodeMain: 'Код домофона',
+        gateCodeSub: '1877# или #9757#',
         footerText: 'С нетерпением ждём встречи с вами!',
         addCalendar: 'Добавить в календарь',
         contactLabel: 'контакты'
