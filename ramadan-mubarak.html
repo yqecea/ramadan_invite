@@ -3,63 +3,48 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Ауызашар | 15.03.2026</title>
-    <meta name="description"
-        content="Приглашаем разделить благодать месяца Рамадан на вечернем ужине Ауызашар. 15 марта 2026, Астана.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <title>Ауызашар - Mubarak</title>
+    <meta name="description" content="Приглашение на совместный ужин Ауызашар.">
+    <meta name="theme-color" content="#F4F4F4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="Ауызашар | 15.03.2026">
-    <meta property="og:description" content="Приглашаем на совместный Ауызашар. 15 марта 2026, Астана.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ramadan-mubarak.web.app/ramadan-mubarak.html">
-    <meta property="og:image" content="https://ramadan-mubarak.web.app/text/G8iZajCWkAArdQx.jpeg">
-    <meta name="theme-color" content="#f8f5f0">
-
-    <!-- Fonts -->
+    <!-- Fonts: Inter for main text, Space Mono for tech/codes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
 
-    <link rel="stylesheet" href="style-mubarak.css?v=11">
+    <!-- Styles -->
+    <link rel="stylesheet" href="style-mubarak.css?v=5">
 </head>
 
 <body>
     <div class="page">
         <main>
-            <!-- Top Ornament -->
-            <div class="ornament anim" aria-hidden="true">
-                <picture>
-                    <source srcset="islamic_ornament.webp" type="image/webp">
-                    <img class="ornament-img" src="islamic_ornament.webp" alt="Islamic Ornament Top" loading="eager"
-                        width="1200" height="400">
-                </picture>
-            </div>
-
-            <!-- Hero -->
-            <section class="hero anim">
+            <!-- Hero Section with main brand image -->
+            <header class="hero anim">
+                <div class="brand-hero-image">
+                    <img src="text/G8iZYcLXkAA-muL.jpeg" alt="Ramadan Mubarak Brand Header" class="img-fluid" />
+                </div>
+                <div class="hero-ticket-header">
+                    <span class="hero-number">01</span>
+                    <span class="hero-number-sub">FWD /// Text Labs</span>
+                </div>
                 <h1 class="title-main">Ауызашар</h1>
-                <p class="hero-date">15 МАРТА 2026 — ВОСКРЕСЕНЬЕ</p>
+                <div class="hero-date">15 Марта 2026 // Воскресенье</div>
+            </header>
+
+            <!-- Brand Design Grid (Additional Images) -->
+            <section class="brand-images-grid anim">
+                <div class="brand-img-wrap"><img src="text/G8iZZU0W0AA2tVC.jpeg" alt="Brand element 1" class="img-fluid" loading="lazy" /></div>
+                <div class="brand-img-wrap"><img src="text/G8iZajCWkAArdQx.jpeg" alt="Brand element 2" class="img-fluid" loading="lazy" /></div>
+                <div class="brand-img-wrap"><img src="text/G8iZbzEXoAAqv2p.jpeg" alt="Brand element 3" class="img-fluid" loading="lazy" /></div>
             </section>
-
-            <!-- Hero Illustration -->
-            <div class="illustration anim" aria-hidden="true">
-                <picture>
-                    <img class="illustration-img" src="text/G8iZajCWkAArdQx.jpeg" alt="Ramadan Mubarak" loading="eager">
-                </picture>
-            </div>
-
-            <!-- Scroll Hint -->
-            <div class="scroll-hint anim" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="6 9 12 15 18 9" />
-                </svg>
-            </div>
 
             <!-- Invitation Text -->
             <section class="invitation anim">
-                <div class="invite-line"></div>
                 <p class="invite-text">
                     Ассаламу алейкум уа рахматуллахи уа баракатух!<br><br>
                     Приглашаем вас разделить благодать священного месяца Рамадан
@@ -69,7 +54,6 @@
                     «Постящегося ждут две радости: одна — при разговении его, а другая — при встрече с его Господом.»
                     <cite>— аль-Бухари, Муслим</cite>
                 </blockquote>
-                <div class="invite-line"></div>
             </section>
 
             <!-- Countdown -->
@@ -80,17 +64,14 @@
                         <span class="timer-value" id="cd-days">00</span>
                         <span class="timer-name">дней</span>
                     </div>
-                    <span class="timer-sep">:</span>
                     <div class="timer-unit">
                         <span class="timer-value" id="cd-hours">00</span>
                         <span class="timer-name">часов</span>
                     </div>
-                    <span class="timer-sep">:</span>
                     <div class="timer-unit">
                         <span class="timer-value" id="cd-minutes">00</span>
                         <span class="timer-name">минут</span>
                     </div>
-                    <span class="timer-sep">:</span>
                     <div class="timer-unit">
                         <span class="timer-value" id="cd-seconds">00</span>
                         <span class="timer-name">секунд</span>
@@ -101,68 +82,40 @@
             <!-- Details -->
             <section class="details anim">
                 <div class="detail-row">
-                    <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="3" y="4" width="18" height="18" rx="2" />
-                        <line x1="16" y1="2" x2="16" y2="6" />
-                        <line x1="8" y1="2" x2="8" y2="6" />
-                        <line x1="3" y1="10" x2="21" y2="10" />
-                    </svg>
-                    <div>
-                        <span class="detail-main">15 марта 2026, воскресенье</span>
-                        <span class="detail-sub">18:00</span>
-                    </div>
+                    <span class="detail-main">Дата & Время</span>
+                    <span class="detail-sub">15 МАРТА 2026<br>ВОСКРЕСЕНЬЕ<br>18:00</span>
                 </div>
                 <div class="detail-row">
-                    <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                        <circle cx="12" cy="10" r="3" />
-                    </svg>
-                    <div>
-                        <span class="detail-main">Olymp Palace 2</span>
-                        <span class="detail-sub">Керей, Жәнібек хандар к-сі, 22</span>
-                        <span class="detail-sub">10 подъезд, 12 қабат, 347 пәтер</span>
-                    </div>
+                    <span class="detail-main">Локация</span>
+                    <span class="detail-sub">OLYMP PALACE 2<br>Керей, Жәнібек хандар к-сі, 22<br>10 подъезд, 12 қабат, 347 пәтер</span>
                 </div>
                 <div class="detail-row">
-                    <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-                        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-                    </svg>
-                    <div>
-                        <span class="detail-main">Доступ</span>
-                        <span class="detail-sub">Код от внешних калиток: #9757#</span>
-                        <span class="detail-sub">Код от подъезда: #3333</span>
-                    </div>
+                    <span class="detail-main">Доступ</span>
+                    <span class="detail-sub">Код от внешних калиток: #9757#<br>Код от подъезда: #3333</span>
                 </div>
             </section>
 
-            <!-- Map Buttons -->
-            <section class="maps anim">
+            <!-- Map Buttons & Actions -->
+            <section class="actions anim">
                 <a href="https://maps.app.goo.gl/N97sVe6t6rmiMs5Y7" class="btn-map" target="_blank"
                     rel="noopener noreferrer">
-                    <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z" />
-                    </svg>
                     Google Maps
-                </a>
-                <a href="https://go.2gis.com/QNugJ" class="btn-map btn-map--alt" target="_blank"
-                    rel="noopener noreferrer">
                     <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
                         <path
                             d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z" />
                     </svg>
-                    2GIS
                 </a>
-            </section>
-
-            <!-- Add to Calendar -->
-            <section class="calendar-section anim">
+                <a href="https://go.2gis.com/QNugJ" class="btn-map" target="_blank"
+                    rel="noopener noreferrer">
+                    2GIS
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z" />
+                    </svg>
+                </a>
                 <button class="btn-calendar" id="addToCalendar">
-                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                    Добавить в календарь
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round">
                         <rect x="3" y="4" width="18" height="18" rx="2" />
                         <line x1="16" y1="2" x2="16" y2="6" />
@@ -171,33 +124,23 @@
                         <line x1="12" y1="14" x2="12" y2="18" />
                         <line x1="10" y1="16" x2="14" y2="16" />
                     </svg>
-                    <span>Добавить в календарь</span>
                 </button>
             </section>
 
-            <!-- Bottom Ornament -->
-            <div class="ornament ornament--bottom anim" aria-hidden="true">
-                <picture>
-                    <source srcset="islamic_ornament.webp" type="image/webp">
-                    <img class="ornament-img" src="islamic_ornament.webp" alt="Islamic Ornament Bottom" loading="lazy"
-                        width="1200" height="400">
-                </picture>
-            </div>
-
             <!-- Contact -->
             <section class="contacts anim">
-                <h2 class="section-label">Контакты</h2>
+                <h2 class="section-label">Связь</h2>
                 <div class="contact-card">
                     <span class="contact-name">Ануар</span>
                     <div class="contact-actions">
-                        <a href="tel:+77755227623" class="contact-btn contact-btn--call" aria-label="Позвонить Ануар">
+                        <a href="tel:+77755227623" class="contact-btn" aria-label="Позвонить Ануар">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                                 <path
                                     d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" />
                             </svg>
                         </a>
                         <a href="https://wa.me/77755227623?text=%D0%90%D1%81%D1%81%D0%B0%D0%BB%D0%B0%D0%BC%D1%83%20%D0%B0%D0%BB%D0%B5%D0%B9%D0%BA%D1%83%D0%BC%20%D1%83%D0%B0%20%D1%80%D0%B0%D1%85%D0%BC%D0%B0%D1%82%D1%83%D0%BB%D0%BB%D0%B0%D1%85%D0%B8%20%D1%83%D0%B0%20%D0%B1%D0%B0%D1%80%D0%B0%D0%BA%D0%B0%D1%82%D1%83%D1%85!"
-                            class="contact-btn contact-btn--whatsapp" target="_blank" rel="noopener noreferrer"
+                            class="contact-btn" target="_blank" rel="noopener noreferrer"
                             aria-label="WhatsApp Ануар">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                                 <path
@@ -211,12 +154,12 @@
             <!-- Footer -->
             <footer class="footer anim">
                 <p class="footer-text">ИншАллах, ждём каждого из вас!</p>
-                <p class="footer-credit">© 2026</p>
+                <p class="footer-credit">© 2026 // SYSTEM: READY</p>
             </footer>
         </main>
     </div>
 
-    <script src="mubarak.js?v=4" defer></script>
+    <script src="mubarak.js?v=5" defer></script>
 </body>
 
 </html>
