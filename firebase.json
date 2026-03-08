@@ -1,55 +1,129 @@
 {
-  "hosting": {
-    "target": "ramadan-invite",
-    "public": ".",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**",
-      ".agent/**",
-      ".github/**",
-      "ref.png",
-      "*.md",
-      "package*.json",
-      "CODEBASE.md",
-      "ARCHITECTURE.md"
-    ],
-    "headers": [
-      {
-        "source": "**/*.@(webp|png|jpg|jpeg|gif|svg|ico)",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "public, max-age=31536000, immutable"
-          }
-        ]
-      },
-      {
-        "source": "**/*.@(css|js)",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "public, max-age=604800"
-          }
-        ]
-      },
-      {
-        "source": "**",
-        "headers": [
-          {
-            "key": "X-Content-Type-Options",
-            "value": "nosniff"
-          },
-          {
-            "key": "X-Frame-Options",
-            "value": "DENY"
-          },
-          {
-            "key": "Referrer-Policy",
-            "value": "strict-origin-when-cross-origin"
-          }
-        ]
-      }
-    ]
-  }
+  "hosting": [
+    {
+      "target": "ramadan-invite",
+      "public": ".",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**",
+        ".agent/**",
+        ".github/**",
+        "ref.png",
+        "*.md",
+        "package*.json",
+        "CODEBASE.md",
+        "ARCHITECTURE.md",
+        "ramadan-ahi.html",
+        "style-ahi.css",
+        "ahi.js",
+        "hero-ahi.webp",
+        "islamic_ornament.webp",
+        "text/**"
+      ],
+      "headers": [
+        {
+          "source": "**/*.@(webp|png|jpg|jpeg|gif|svg|ico)",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "public, max-age=31536000, immutable"
+            }
+          ]
+        },
+        {
+          "source": "**/*.@(css|js)",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "public, max-age=604800"
+            }
+          ]
+        },
+        {
+          "source": "**",
+          "headers": [
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "strict-origin-when-cross-origin"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "target": "ramadan-mubarak",
+      "public": ".",
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/ramadan-ahi.html"
+        }
+      ],
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**",
+        ".agent/**",
+        ".github/**",
+        "ref.png",
+        "*.md",
+        "package*.json",
+        "CODEBASE.md",
+        "ARCHITECTURE.md",
+        "index.html",
+        "style.css",
+        "script.js",
+        "kazakh_ornament.png",
+        "kazakh_ornament.webp",
+        "astana_watercolor.webp",
+        "text/**"
+      ],
+      "headers": [
+        {
+          "source": "**/*.@(webp|png|jpg|jpeg|gif|svg|ico)",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "public, max-age=31536000, immutable"
+            }
+          ]
+        },
+        {
+          "source": "**/*.@(css|js)",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "public, max-age=604800"
+            }
+          ]
+        },
+        {
+          "source": "**",
+          "headers": [
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "strict-origin-when-cross-origin"
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

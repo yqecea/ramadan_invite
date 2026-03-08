@@ -1,0 +1,727 @@
+/* ========================================
+   Ауызашар (Akhi) — Text Lab / Brutalist CSS
+   Mirrors structure of style.css but with 
+   Tech Spec design system
+   ======================================== */
+
+/* Tokens */
+:root {
+    --bg: #f0fdf9;
+    --bg-card: #e8faf2;
+    --accent: #0b0c0c;
+    --accent-light: rgba(11, 12, 12, 0.06);
+    --text: #0b0c0c;
+    --text-muted: #4a4a4a;
+
+    --ff-main: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --ff-tech: 'JetBrains Mono', 'Courier New', monospace;
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+    max-width: 100%;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--ff-main);
+    font-size: 16px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100dvh;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    /* Subtle noise grain */
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
+}
+
+/* Page container — mobile-first narrow */
+.page {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 0 24px env(safe-area-inset-bottom, 0);
+}
+
+/* ---- Top Bar (replaces ornament) ---- */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 3px solid var(--accent);
+    margin-bottom: 8px;
+}
+
+.bar-label {
+    font-family: var(--ff-tech);
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+}
+
+/* ---- Ornament Strips (mirrors original kazakh_ornament) ---- */
+.ornament {
+    width: 100%;
+    overflow: hidden;
+    aspect-ratio: 3 / 1;
+    margin: 8px 0;
+}
+
+.ornament-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    mix-blend-mode: multiply;
+}
+
+.ornament--bottom .ornament-img {
+    transform: scaleY(-1);
+}
+
+/* ---- Hero ---- */
+.hero {
+    text-align: center;
+    padding: 24px 0 8px;
+}
+
+.title-main {
+    font-family: var(--ff-main);
+    font-size: clamp(48px, 14vw, 72px);
+    font-weight: 900;
+    color: var(--accent);
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.hero-date {
+    font-family: var(--ff-tech);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border: 2px solid var(--accent);
+    display: inline-block;
+}
+
+/* ---- Illustration ---- */
+.illustration {
+    display: flex;
+    justify-content: center;
+    padding: 16px 0;
+}
+
+.illustration-img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    display: block;
+    border: 3px solid var(--accent);
+    mix-blend-mode: multiply;
+}
+
+/* ---- Scroll Hint ---- */
+.scroll-hint {
+    display: flex;
+    justify-content: center;
+    padding: 4px 0 8px;
+    animation: scrollBounce 2s ease-in-out infinite;
+}
+
+.scroll-hint svg {
+    width: 24px;
+    height: 24px;
+    max-width: 24px;
+    max-height: 24px;
+    color: var(--accent);
+    opacity: 0.3;
+}
+
+@keyframes scrollBounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: translateY(6px);
+        opacity: 0.7;
+    }
+}
+
+/* ---- Invitation Text ---- */
+.invitation {
+    text-align: center;
+    padding: 32px 8px;
+}
+
+.invite-line {
+    width: 80px;
+    height: 3px;
+    background: var(--accent);
+    margin: 0 auto 24px;
+}
+
+.invite-text {
+    font-family: var(--ff-main);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.7;
+    color: var(--text);
+    margin-bottom: 20px;
+}
+
+.hadith {
+    font-family: var(--ff-main);
+    font-size: 16px;
+    font-weight: 600;
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--text);
+    padding: 20px;
+    border-left: 4px solid var(--accent);
+    text-align: left;
+    background: var(--accent-light);
+    margin: 0 0 24px;
+}
+
+.hadith cite {
+    display: block;
+    font-style: normal;
+    font-weight: 400;
+    font-family: var(--ff-tech);
+    font-size: 11px;
+    margin-top: 10px;
+    opacity: 0.6;
+    text-transform: uppercase;
+}
+
+/* ---- Countdown ---- */
+.countdown {
+    text-align: center;
+    padding: 32px 0;
+    border-top: 1px solid rgba(11, 12, 12, 0.15);
+    border-bottom: 1px solid rgba(11, 12, 12, 0.15);
+}
+
+.section-label {
+    font-family: var(--ff-tech);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+.timer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 6px;
+}
+
+.timer-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 58px;
+}
+
+.timer-value {
+    font-family: var(--ff-tech);
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1;
+    padding: 12px 8px;
+    background: var(--accent-light);
+    border: 2px solid var(--accent);
+    min-width: 58px;
+    display: block;
+    text-align: center;
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.15s;
+    will-change: transform, opacity;
+}
+
+.timer-value.pop {
+    transform: scale(1.08);
+    opacity: 0.5;
+}
+
+.timer-name {
+    font-family: var(--ff-tech);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-top: 6px;
+}
+
+.timer-sep {
+    font-family: var(--ff-tech);
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--accent);
+    padding-top: 10px;
+    line-height: 1;
+    opacity: 0.3;
+}
+
+/* ---- Details ---- */
+.details {
+    padding: 24px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.detail-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: var(--bg-card);
+    padding: 18px 16px;
+    border: 2px solid var(--accent);
+}
+
+.detail-icon {
+    width: 22px;
+    height: 22px;
+    color: var(--accent);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.detail-row div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.detail-main {
+    font-family: var(--ff-main);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.detail-sub {
+    font-family: var(--ff-tech);
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+/* ---- Map Buttons ---- */
+.maps {
+    padding: 16px 0 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.btn-map {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 24px;
+    text-decoration: none;
+    font-family: var(--ff-tech);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s;
+    -webkit-tap-highlight-color: transparent;
+    background: var(--accent);
+    color: var(--bg);
+    border: 3px solid var(--accent);
+}
+
+.btn-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.btn-map:active {
+    transform: scale(0.97);
+}
+
+@media (hover: hover) {
+    .btn-map:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(11, 12, 12, 0.2);
+    }
+}
+
+.btn-map--alt {
+    background: transparent;
+    color: var(--accent);
+}
+
+.btn-map--alt:active {
+    background: var(--accent);
+    color: var(--bg);
+}
+
+@media (hover: hover) {
+    .btn-map--alt:hover {
+        background: var(--accent);
+        color: var(--bg);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(11, 12, 12, 0.2);
+    }
+}
+
+/* ---- Calendar Button ---- */
+.calendar-section {
+    padding: 0 0 32px;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-calendar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 16px 24px;
+    border: 3px solid var(--accent);
+    background: transparent;
+    color: var(--accent);
+    font-family: var(--ff-tech);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s, background 0.2s;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.btn-calendar .btn-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.btn-calendar:active {
+    transform: scale(0.97);
+}
+
+@media (hover: hover) {
+    .btn-calendar:hover {
+        transform: translateY(-2px);
+        background: var(--accent);
+        color: var(--bg);
+        box-shadow: 0 6px 20px rgba(11, 12, 12, 0.2);
+    }
+}
+
+/* ---- Bottom Bar (replaces ornament) ---- */
+.bottom-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-top: 3px solid var(--accent);
+    border-bottom: 3px solid var(--accent);
+    margin: 8px 0;
+}
+
+/* ---- Contact Section ---- */
+.contacts {
+    padding: 16px 0 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.contacts .section-label {
+    text-align: center;
+}
+
+.contact-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--bg-card);
+    padding: 14px 16px;
+    border: 2px solid var(--accent);
+}
+
+.contact-name {
+    font-family: var(--ff-main);
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text);
+    flex: 1;
+}
+
+.contact-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.contact-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    min-height: 42px;
+    max-width: 42px;
+    max-height: 42px;
+    border: 2px solid var(--accent);
+    cursor: pointer;
+    text-decoration: none;
+    overflow: hidden;
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    -webkit-tap-highlight-color: transparent;
+}
+
+.contact-btn svg {
+    width: 20px !important;
+    height: 20px !important;
+    max-width: 20px !important;
+    max-height: 20px !important;
+    flex-shrink: 0;
+}
+
+.contact-btn--call {
+    background: var(--accent);
+    color: var(--bg);
+}
+
+.contact-btn--whatsapp {
+    background: #25D366;
+    color: #fff;
+    border-color: #25D366;
+}
+
+.contact-btn:active {
+    transform: scale(0.9);
+}
+
+/* ---- Footer ---- */
+.footer {
+    text-align: center;
+    padding: 16px 0 48px;
+}
+
+.footer-text {
+    font-family: var(--ff-main);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 8px;
+}
+
+.footer-credit {
+    font-family: var(--ff-tech);
+    font-size: 10px;
+    color: var(--text-muted);
+    opacity: 0.5;
+}
+
+/* ---- Scroll Animations ---- */
+.anim {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.anim.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered animation delays */
+.anim:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.anim:nth-child(3) {
+    transition-delay: 0.2s;
+}
+
+.anim:nth-child(4) {
+    transition-delay: 0.3s;
+}
+
+.anim:nth-child(5) {
+    transition-delay: 0.4s;
+}
+
+/* ---- Hero Title Animation ---- */
+.title-main {
+    animation: titleReveal 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+}
+
+@keyframes titleReveal {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+        letter-spacing: 0.1em;
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        letter-spacing: -0.04em;
+    }
+}
+
+/* Hero date label slide-in */
+.hero-date {
+    animation: slideIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.6s both;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ---- Illustration Float ---- */
+.illustration-img {
+    animation: gentleFloat 6s ease-in-out infinite;
+}
+
+@keyframes gentleFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+/* ---- Hadith Glow ---- */
+.hadith {
+    transition: border-color 0.4s, box-shadow 0.4s;
+}
+
+.hadith:hover {
+    border-color: var(--accent);
+    box-shadow: -4px 0 12px rgba(11, 12, 12, 0.08);
+}
+
+/* ---- Detail Rows Stagger ---- */
+.detail-row {
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s;
+}
+
+@media (hover: hover) {
+    .detail-row:hover {
+        transform: translateX(4px);
+        box-shadow: -4px 0 0 var(--accent);
+    }
+}
+
+/* ---- Contact Card Hover ---- */
+.contact-card {
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s;
+}
+
+@media (hover: hover) {
+    .contact-card:hover {
+        transform: translateX(4px);
+        box-shadow: -4px 0 0 var(--accent);
+    }
+}
+
+/* ---- Ornament Subtle Pulse ---- */
+.ornament-img {
+    animation: ornamentPulse 4s ease-in-out infinite alternate;
+}
+
+@keyframes ornamentPulse {
+    from {
+        opacity: 0.7;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* ---- Tablet+ ---- */
+@media (min-width: 600px) {
+    .page {
+        max-width: 580px;
+        padding: 0 40px;
+    }
+
+    .title-main {
+        font-size: 80px;
+    }
+
+    .invite-text {
+        font-size: 20px;
+    }
+
+    .timer-value {
+        font-size: 42px;
+        min-width: 72px;
+    }
+}
+
+/* ---- Reduced Motion ---- */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .anim {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .timer-value {
+        transition: none;
+    }
+}
