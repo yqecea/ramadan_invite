@@ -6,7 +6,7 @@
 
 /* Tokens */
 :root {
-        --bg: #e8f7f2;
+    --bg: #e8f7f2;
     --bg-card: rgba(255, 255, 255, 0.7);
     --accent: #000000;
     --accent-light: rgba(0, 0, 0, 0.1);
@@ -16,8 +16,9 @@
     --olive: #000000;
     --gold: #000000;
 
-    --ff-main: 'Inter', system-ui, sans-serif;
-    --ff-tech: 'Share Tech Mono', monospace;}
+    --ff-main: 'Geist', system-ui, sans-serif;
+    --ff-tech: 'Geist Mono', monospace;
+}
 
 /* Reset */
 *,
@@ -109,7 +110,7 @@ body {
 .title-main {
     font-family: var(--ff-main);
     font-size: clamp(48px, 14vw, 72px);
-    font-weight:  900;
+    font-weight: 900;
     color: var(--accent);
     line-height: 0.9;
     letter-spacing: -0.08em;
@@ -187,7 +188,8 @@ body {
     width: 100%;
     height: auto;
     display: block;
-    mix-blend-mode: multiply;}
+    mix-blend-mode: multiply;
+}
 
 /* HUD Corners */
 .hud-corners {
@@ -783,7 +785,8 @@ body {
 /* ---- Illustration Float ---- */
 .illustration-img {
     animation: gentleFloat 6s ease-in-out infinite;
- mix-blend-mode: multiply;}
+    mix-blend-mode: multiply;
+}
 
 @keyframes gentleFloat {
 
