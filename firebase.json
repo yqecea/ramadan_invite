@@ -62,6 +62,13 @@
     {
       "target": "ramadan-mubarak",
       "public": ".",
+      "redirects": [
+        {
+          "source": "/",
+          "destination": "/ramadan-mubarak.html",
+          "type": 301
+        }
+      ],
       "rewrites": [
         {
           "source": "/mubarak",
