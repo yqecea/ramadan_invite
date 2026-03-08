@@ -66,6 +66,10 @@
         {
           "source": "/mubarak",
           "destination": "/ramadan-mubarak.html"
+        },
+        {
+          "source": "**",
+          "destination": "/ramadan-mubarak.html"
         }
       ],
       "ignore": [
