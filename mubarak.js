@@ -1,5 +1,5 @@
 // =============================================
-// Ауызашар (Akhi Version) — Script
+// Ауызашар (Mubarak Version) — Script
 // =============================================
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
-        a.download = 'auyzashar-ahi-invite.ics';
+        a.download = 'auyzashar-mubarak-invite.ics';
         a.click();
         URL.revokeObjectURL(url);
     });

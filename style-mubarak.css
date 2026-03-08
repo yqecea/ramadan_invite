@@ -1,5 +1,5 @@
 /* ========================================
-   Ауызашар (Akhi) — Text Lab / Brutalist CSS
+   Ауызашар (Mubarak) — Text Lab / Brutalist CSS
    Mirrors structure of style.css but with 
    Tech Spec design system
    ======================================== */
@@ -60,7 +60,9 @@ body {
 .top-bar {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     align-items: center;
+    gap: 8px;
     padding: 12px 0;
     border-bottom: 3px solid var(--accent);
     margin-bottom: 8px;
@@ -86,7 +88,8 @@ body {
 .ornament-img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center;
     display: block;
     mix-blend-mode: multiply;
 }
@@ -124,20 +127,176 @@ body {
     display: inline-block;
 }
 
+/* ---- Global Grid Backgound ---- */
+.global-grid {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    background-size: 40px 40px;
+    background-image: linear-gradient(to right, rgba(11, 12, 12, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(11, 12, 12, 0.04) 1px, transparent 1px);
+    mask-image: radial-gradient(circle at center, black 40%, transparent 90%);
+    -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 90%);
+}
+
+/* blinking dot in Top Bar */
+.pulse-dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background-color: var(--accent);
+    border-radius: 50%;
+    margin-right: 4px;
+    vertical-align: middle;
+    animation: flash 1.5s infinite;
+}
+
+@keyframes flash {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
 /* ---- Illustration ---- */
 .illustration {
+    position: relative;
+    max-width: 400px;
+    margin: 16px auto;
+    padding: 24px;
     display: flex;
     justify-content: center;
-    padding: 16px 0;
+    align-items: center;
+}
+
+.illustration picture {
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 .illustration-img {
     width: 100%;
-    max-width: 400px;
     height: auto;
     display: block;
-    border: 3px solid var(--accent);
     mix-blend-mode: multiply;
+}
+
+/* HUD Corners */
+.hud-corners {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.hud-corner {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    color: var(--accent);
+    stroke-width: 2px;
+    opacity: 0.8;
+}
+
+.hud-corner.top-left {
+    top: 0;
+    left: 0;
+}
+
+.hud-corner.top-right {
+    top: 0;
+    right: 0;
+}
+
+.hud-corner.bottom-left {
+    bottom: 0;
+    left: 0;
+}
+
+.hud-corner.bottom-right {
+    bottom: 0;
+    right: 0;
+}
+
+/* HUD Crosshair */
+.hud-crosshair {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 10;
+    opacity: 0.2;
+}
+
+.hud-crosshair::before,
+.hud-crosshair::after {
+    content: '';
+    position: absolute;
+    background: var(--accent);
+}
+
+.hud-crosshair::before {
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 1px;
+    transform: translateX(-50%);
+}
+
+.hud-crosshair::after {
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 1px;
+    transform: translateY(-50%);
+}
+
+/* HUD Scanning Line */
+.hud-corners::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--accent);
+    opacity: 0.2;
+    animation: scanLine 6s infinite linear;
+}
+
+@keyframes scanLine {
+    0% {
+        top: 0;
+        opacity: 0;
+    }
+
+    5% {
+        opacity: 0.6;
+    }
+
+    45% {
+        opacity: 0.6;
+    }
+
+    50% {
+        top: 100%;
+        opacity: 0;
+    }
+
+    100% {
+        top: 100%;
+        opacity: 0;
+    }
 }
 
 /* ---- Scroll Hint ---- */
@@ -240,26 +399,28 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: 6px;
+    gap: 4px;
+    flex-wrap: nowrap;
 }
 
 .timer-unit {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 58px;
+    flex: 1;
+    min-width: 0;
 }
 
 .timer-value {
     font-family: var(--ff-tech);
-    font-size: 36px;
+    font-size: clamp(24px, 8vw, 36px);
     font-weight: 700;
     color: var(--accent);
     line-height: 1;
-    padding: 12px 8px;
+    padding: 12px 4px;
     background: var(--accent-light);
     border: 2px solid var(--accent);
-    min-width: 58px;
+    width: 100%;
     display: block;
     text-align: center;
     transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.15s;
@@ -283,7 +444,7 @@ body {
 
 .timer-sep {
     font-family: var(--ff-tech);
-    font-size: 28px;
+    font-size: clamp(20px, 6vw, 28px);
     font-weight: 700;
     color: var(--accent);
     padding-top: 10px;

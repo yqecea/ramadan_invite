@@ -21,10 +21,13 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="style-ahi.css">
+    <link rel="stylesheet" href="style-mubarak.css">
 </head>
 
 <body>
+    <!-- Global Decorative Grid Background -->
+    <div class="global-grid"></div>
+
     <div class="page">
         <main>
             <!-- Top Ornament (mirrors original kazakh_ornament) -->
@@ -37,9 +40,10 @@
             </div>
             <!-- Tech Label Bar -->
             <div class="top-bar anim" aria-hidden="true">
-                <span class="bar-label">EXPERIMENTAL SYSTEMS</span>
+                <span class="bar-label"><span class="pulse-dot"></span> EXPERIMENTAL SYSTEMS</span>
                 <span class="bar-label">ASTANA // KAZ</span>
-                <span class="bar-label">2026</span>
+                <span class="bar-label">DATA_SYNC: 99%</span>
+                <span class="bar-label">2026 // v2</span>
             </div>
 
             <!-- Hero -->
@@ -49,11 +53,28 @@
             </section>
 
             <!-- Hero Illustration -->
-            <div class="anim" aria-hidden="true">
+            <div class="illustration anim" aria-hidden="true">
+                <!-- HUD Corner Overlays -->
+                <div class="hud-corners">
+                    <svg class="hud-corner top-left" viewBox="0 0 20 20" fill="none" stroke="currentColor">
+                        <path d="M 0 20 L 0 0 L 20 0" />
+                    </svg>
+                    <svg class="hud-corner top-right" viewBox="0 0 20 20" fill="none" stroke="currentColor">
+                        <path d="M 0 0 L 20 0 L 20 20" />
+                    </svg>
+                    <svg class="hud-corner bottom-left" viewBox="0 0 20 20" fill="none" stroke="currentColor">
+                        <path d="M 0 0 L 0 20 L 20 20" />
+                    </svg>
+                    <svg class="hud-corner bottom-right" viewBox="0 0 20 20" fill="none" stroke="currentColor">
+                        <path d="M 20 0 L 20 20 L 0 20" />
+                    </svg>
+                </div>
+                <!-- Crosshair -->
+                <div class="hud-crosshair"></div>
                 <picture>
                     <source srcset="hero-ahi.webp" type="image/webp">
-                    <img class="hero-bismillah" src="hero-ahi.webp" alt="Bismillah Mandala" loading="eager" width="800"
-                        height="800">
+                    <img class="illustration-img" src="hero-ahi.webp" alt="Bismillah Mandala" loading="eager"
+                        width="800" height="800">
                 </picture>
             </div>
 
@@ -228,7 +249,7 @@
         </main>
     </div>
 
-    <script src="ahi.js"></script>
+    <script src="mubarak.js"></script>
 </body>
 
 </html>

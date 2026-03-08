@@ -14,9 +14,9 @@
         "package*.json",
         "CODEBASE.md",
         "ARCHITECTURE.md",
-        "ramadan-ahi.html",
-        "style-ahi.css",
-        "ahi.js",
+        "ramadan-mubarak.html",
+        "style-mubarak.css",
+        "mubarak.js",
         "hero-ahi.webp",
         "islamic_ornament.webp",
         "text/**"
@@ -64,8 +64,8 @@
       "public": ".",
       "rewrites": [
         {
-          "source": "**",
-          "destination": "/ramadan-ahi.html"
+          "source": "/mubarak",
+          "destination": "/ramadan-mubarak.html"
         }
       ],
       "ignore": [
